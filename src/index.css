@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FAF7F2;
+    color: #3D405B;
+}
+
+.font-heading { font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif; }
+.font-handwriting { font-family: 'Caveat', cursive; }
+
+.blob-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.blob-shape-2 {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+/* Subtle paw pattern using data URI (small paw shape) */
+.paw-pattern {
+    background-image: radial-gradient(circle at 20% 20%, rgba(224,122,95,0.06) 0 6px, transparent 7px),
+                      radial-gradient(circle at 70% 60%, rgba(129,178,154,0.06) 0 5px, transparent 6px),
+                      radial-gradient(circle at 40% 80%, rgba(242,204,143,0.10) 0 7px, transparent 8px);
+    background-size: 220px 220px, 280px 280px, 260px 260px;
+}
+
+@keyframes floaty {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.animate-floaty { animation: floaty 6s ease-in-out infinite; }
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.7s ease-out both; }
+
+@layer base {
+    :root {
+        --background: 36 36% 97%;
+        --foreground: 233 20% 30%;
+        --card: 0 0% 100%;
+        --card-foreground: 233 20% 30%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 233 20% 30%;
+        --primary: 13 66% 63%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 149 22% 59%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 36 30% 94%;
+        --muted-foreground: 233 12% 48%;
+        --accent: 37 78% 76%;
+        --accent-foreground: 233 20% 30%;
+        --destructive: 0 72% 55%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 36 24% 88%;
+        --input: 36 24% 88%;
+        --ring: 13 66% 63%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    html { scroll-behavior: smooth; }
+    body { @apply bg-background text-foreground; }
+}
