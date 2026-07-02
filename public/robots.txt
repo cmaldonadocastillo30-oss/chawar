@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://furry-friends-care-20.emergent.host/sitemap.xml
+Sitemap: https://cuidado-mascotas-granada.netlify.app/sitemap.xml
